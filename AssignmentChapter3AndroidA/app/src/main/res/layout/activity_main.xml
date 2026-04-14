@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:background="@color/myPurple"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:title="Registration Form"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
+        app:titleTextColor="#FFFFFF" />
+    
+    
+    
+    <!-- Name -->
+    <TextView
+        android:id="@+id/tvNameLabel"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+
+        android:text="@string/name"
+        app:layout_constraintBottom_toTopOf="@+id/etName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etName"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="64dp"
+
+        android:hint="@string/enter_name"
+        android:importantForAutofill="no"
+        android:maxLines="1"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:imeOptions="actionDone"
+
+        app:layout_constraintBottom_toTopOf="@+id/tvEmailLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameLabel" />
+
+    <!-- Email -->
+    <TextView
+        android:id="@+id/tvEmailLabel"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+
+        android:text="@string/email_address"
+
+        app:layout_constraintBottom_toTopOf="@+id/etEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etEmail"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="64dp"
+
+        android:hint="@string/example123_gmail_com"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:imeOptions="actionDone"
+
+        app:layout_constraintBottom_toTopOf="@+id/tvGenderLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailLabel" />
+
+    <!-- Gender -->
+    <TextView
+        android:id="@+id/tvGenderLabel"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+
+        android:text="@string/select_gender"
+
+        app:layout_constraintBottom_toTopOf="@+id/rgGender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+    <RadioGroup
+        android:id="@+id/rgGender"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+
+        android:checkedButton="@id/rbMale"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toTopOf="@+id/tvHobbiesLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGenderLabel">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+
+            android:id="@+id/rbMale"
+            app:useMaterialThemeColors="false"
+            app:buttonTint="@color/myPurple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_male" />
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbFemale"
+            app:buttonTint= "@color/myPurple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_female" />
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbOther"
+            app:buttonTint="@color/myPurple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_others" />
+    </RadioGroup>
+
+    <!-- Hobbies -->
+    <TextView
+        android:id="@+id/tvHobbiesLabel"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+
+        android:text="@string/hobbies"
+
+        app:layout_constraintBottom_toTopOf="@+id/tableHobbies"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgGender" />
+
+    <TableLayout
+        android:id="@+id/tableHobbies"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/btnNormalToast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHobbiesLabel">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbSports"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sports"
+                app:buttonTint="@color/myPurple" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbTravel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/travel"
+                app:buttonTint="@color/myPurple"/>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbReading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/reading"
+                app:buttonTint="@color/myPurple"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbSinging"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/singing"
+                app:buttonTint="@color/myPurple"/>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbDancing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/dancing"
+                app:buttonTint="@color/myPurple"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <!-- Buttons -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNormalToast"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+
+        android:backgroundTint="@color/myPurple"
+        android:text="@string/normal_toast"
+        android:textColor="#FFFFFF"
+
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCustomToast"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableHobbies" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCustomToast"
+
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+
+        android:layout_marginBottom="24dp"
+        android:text="@string/custom_toast"
+        android:textAllCaps="false"
+
+        android:textColor="@color/myPurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNormalToast"
+        app:strokeColor="@color/myPurple"
+        app:strokeWidth="2dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
