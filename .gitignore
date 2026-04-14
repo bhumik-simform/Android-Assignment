@@ -8,25 +8,50 @@ build/
 # Local config (your system only)
 local.properties
 
-# Android Studio files
+# Android Studio / IntelliJ IDEA files
 .idea/
 *.iml
+app/.idea/
+
+# Built application files
+*.apk
+*.aab
+*.ap_
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java/Kotlin compiled files
+*.class
+
+# Kotlin-specific
+.kotlin/
+
+# Generated / temp files
+bin/
+gen/
+out/
+captures/
+.navigation/
+.externalNativeBuild/
+.cxx/
+
+# Keystore files (important ⚠️ never push production keys)
+*.jks
+*.keystore
+keystore/
+# Exception: debug keystore is safe to commit
+!keystore/debug.keystore
+
+# Logs
+*.log
 
 # OS junk
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
+# Proguard
+proguard/
 
-# Keystore files (important ⚠️ never push)
-*.jks
-*.keystore
-
-# Generated / temp
-captures/
-.externalNativeBuild/
-.cxx/
-
-# Java/Kotlin compiled files
-*.class
+# Google Services (uncomment if you don't want to commit Firebase config)
+# google-services.json
