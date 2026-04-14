@@ -1,0 +1,32 @@
+# Build files (auto-generated)
+build/
+*/build/
+
+# Gradle
+.gradle/
+
+# Local config (your system only)
+local.properties
+
+# Android Studio files
+.idea/
+*.iml
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Keystore files (important ⚠️ never push)
+*.jks
+*.keystore
+
+# Generated / temp
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Java/Kotlin compiled files
+*.class
