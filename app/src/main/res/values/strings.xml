@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Assignment Chapter 3 Android B</string>
+    <string name="enter_feedback">Enter FeedBack</string>
+    <string name="would_you_like_an_email_response">Would you like an email response?</string>
+    <string name="form_header">Enter Feedback details to send to the developer:</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_email">Your Email</string>
+    <string name="select_your_option">Select Your Option</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="default_Option">Praise</string>
 </resources>
