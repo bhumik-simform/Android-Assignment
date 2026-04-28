@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Assignment Chapter 3 Android (A)</string>
+    <string name="name">Name</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="example123_gmail_com">example123@gmail.com</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="gender_others">Others</string>
+    <string name="hobbies">Hobbies</string>
+    <string name="sports">Sports</string>
+    <string name="travel">Travel</string>
+    <string name="reading">Reading</string>
+    <string name="singing">Singing</string>
+    <string name="dancing">Dancing</string>
+    <string name="normal_toast">Normal Toast</string>
+    <string name="custom_toast">Custom Toast</string>
+    <string name="custom_toast_msg">This is custom Toast</string>
+</resources>
