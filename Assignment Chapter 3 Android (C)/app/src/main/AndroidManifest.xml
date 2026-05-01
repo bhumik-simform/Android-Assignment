@@ -12,7 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AssignmentChapter3AndroidC">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.GridViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RecyclerViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ListViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

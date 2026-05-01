@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    tools:ignore="MissingConstraints"
+    android:elevation="4dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clipToOutline="true">
+
+    <ImageView
+        android:id="@+id/iv_os_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_os_name"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        tools:text="macOS"
+        android:textSize="32sp"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintStart_toEndOf="@id/iv_os_icon"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_year"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Founded: 2007"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintStart_toStartOf="@id/tv_os_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_os_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
