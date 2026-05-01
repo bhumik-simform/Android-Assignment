@@ -4,4 +4,16 @@
     <string name="btn_text_recyclerview">Recycler View</string>
     <string name="btn_text_grid_view">Grid Recycler View</string>
     <string name="text_founded_year">Founded: %s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_title_home">Home</string>
+    <string name="nav_title_search">Search</string>
+    <string name="nav_title_profile">Profile</string>
+
+    <string name="text_team">Team: %s</string>
+    <string name="text_first_appearance">First Appearance: %s</string>
+    <string name="text_created_by">Created By: %s</string>
+    <string name="text_publisher">Publisher: %s</string>
+    <string name="text_bio">Bio: %s</string>
+
 </resources>

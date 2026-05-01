@@ -1,44 +1,64 @@
 package com.example.assignmentchapter3c.ui
 
-import android.content.Intent
+
+import android.media.MediaDrm
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Space
-import androidx.activity.enableEdgeToEdge
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.assignmentchapter3c.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    private val homeFragment = HomeFragment()
+    private val searchFragment = SearchFragment()
+    private val profileFragment = ProfileFragment()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(
-                systemBars.left + 40,
-                systemBars.top,
-                systemBars.right + 40,
-                systemBars.bottom
-            )
-            insets
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        if (savedInstanceState == null) {
+            Log.d("Enter New Fragment","This is Home Fragment")
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, homeFragment)
+                .commit()
         }
 
-        val listViewBtn = findViewById<Button>(R.id.btn_listview)
-        listViewBtn.setOnClickListener {
-            startActivity(Intent(this, ListViewActivity::class.java))
-        }
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
 
-        val recyclerViewBtn = findViewById<Button>(R.id.btn_recyclerview)
-        recyclerViewBtn.setOnClickListener {
-            startActivity(Intent(this, RecyclerViewActivity::class.java))
-        }
+                R.id.nav_home -> {
+                    Log.d("Enter New Fragment","This is Home Fragment")
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, homeFragment)
+                        .commit()
+                    true
+                }
 
-        val gridViewBtn = findViewById<Button>(R.id.btn_gridview)
-        gridViewBtn.setOnClickListener {
-            startActivity(Intent(this, GridViewActivity::class.java))
+                R.id.nav_search -> {
+                    Log.d("Enter New Fragment","This is Search Fragment")
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container,searchFragment)
+                        .commit()
+                    true
+                }
+
+                R.id.nav_profile -> {
+                    Log.d("Enter New Fragment","This is profile Fragment")
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container,profileFragment)
+                        .commit()
+                    true
+                }
+
+                else -> false
+
+            }
+
         }
     }
 }
