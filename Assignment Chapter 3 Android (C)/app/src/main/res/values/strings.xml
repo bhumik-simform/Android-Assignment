@@ -3,4 +3,5 @@
     <string name="btn_text_listview">List View</string>
     <string name="btn_text_recyclerview">Recycler View</string>
     <string name="btn_text_grid_view">Grid Recycler View</string>
+    <string name="text_founded_year">Founded: %s</string>
 </resources>

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="40dp"
     tools:context=".ui.MainActivity">
 
     <Button
@@ -17,7 +16,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="16dp" />
+        android:layout_height="16dp"/>
 
     <Button
         android:id="@+id/btn_recyclerview"
@@ -25,10 +24,9 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_text_recyclerview" />
 
-
     <Space
         android:layout_width="match_parent"
-        android:layout_height="16dp" />
+        android:layout_height="16dp"/>
 
     <Button
         android:id="@+id/btn_gridview"
