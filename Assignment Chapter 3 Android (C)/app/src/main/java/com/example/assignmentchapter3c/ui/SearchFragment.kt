@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.assignmentchapter3c.R
 import com.example.assignmentchapter3c.adapter.HeroAdapter
 import com.example.assignmentchapter3c.data.HeroRepository
+import com.example.assignmentchapter3c.decor.HeroRecyclerViewItemSpacing
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -18,5 +19,6 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         val heroList = HeroRepository.getHeroes(requireContext())
         heroRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         heroRecyclerView.adapter = HeroAdapter(requireContext(), heroList)
+        heroRecyclerView.addItemDecoration(HeroRecyclerViewItemSpacing())
     }
 }

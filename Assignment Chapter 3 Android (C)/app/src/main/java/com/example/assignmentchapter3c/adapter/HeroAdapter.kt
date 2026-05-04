@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.transition.Visibility
 import com.example.assignmentchapter3c.R
 import com.example.assignmentchapter3c.model.HeroModel
 import com.squareup.picasso.Picasso
@@ -28,6 +29,8 @@ class HeroAdapter(
         val publisherTextView: TextView = view.findViewById(R.id.tv_publisher)
         val bioTextView: TextView = view.findViewById(R.id.tv_bio)
 
+        val expandedView: View = view.findViewById(R.id.expanded_layout)
+
         fun bindData(item: HeroModel) {
             Picasso.get().load(item.imageURL).into(heroImageView)
             heroNameTextView.text = item.name
@@ -38,7 +41,7 @@ class HeroAdapter(
             createdByTextView.text = context.getString(R.string.text_created_by, item.createdBy)
             publisherTextView.text = context.getString(R.string.text_publisher, item.publisher)
             bioTextView.text = context.getString(R.string.text_bio, item.bio)
-
+            expandedView.visibility = if(item.isExpanded) View.VISIBLE else View.GONE
         }
 
     }
@@ -55,6 +58,10 @@ class HeroAdapter(
     override fun onBindViewHolder(holder: HeroViewHolder, position: Int) {
         val item = heroList.elementAt(position)
         holder.bindData(item)
+        holder.itemView.setOnClickListener {
+            item.isExpanded = !item.isExpanded
+            notifyItemChanged(position)
+        }
     }
 
     override fun getItemCount() = heroList.count()
