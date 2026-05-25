@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Assignment Chapter 3 Android (D)</string>
+    <string name="nav_title_gallery">Gallery</string>
+    <string name="nav_title_add_message">Add Message</string>
+    <string name="nav_title_view_messages">View Messages</string>
 </resources>

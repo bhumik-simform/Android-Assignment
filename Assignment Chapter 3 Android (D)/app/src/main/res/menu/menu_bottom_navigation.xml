@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_gallery"
+        android:icon="@drawable/ic_gallery"
+        android:title="@string/nav_title_gallery" />
+
+    <item
+        android:id="@+id/nav_add_message"
+        android:icon="@drawable/ic_add_message"
+        android:title="@string/nav_title_add_message" />
+
+    <item
+        android:id="@+id/nav_view_message"
+        android:icon="@drawable/ic_view_message"
+        android:title="@string/nav_title_view_messages" />
+</menu>
