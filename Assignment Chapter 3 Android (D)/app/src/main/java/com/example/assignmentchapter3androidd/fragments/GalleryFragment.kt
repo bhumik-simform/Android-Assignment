@@ -23,7 +23,7 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
         }
     }
 
-    private val openCamera = registerForActivityResult(ActivityResultContracts.TakePicture()) {
+    private val openCamera = registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
 
     }
 
