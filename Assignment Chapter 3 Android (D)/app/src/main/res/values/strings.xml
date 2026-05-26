@@ -7,4 +7,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_txt_save_message">Save Message</string>
     <string name="txt_edit_hint_add_message_here">Add Message Here</string>
+    <string name="title_activity_selection">SelectionActivity</string>
+    <string name="btn_txt_frag_man">Go to Fragment Manger Implmentation</string>
+    <string name="btn_txt_jet_nav">Go to Jetpack Navigation Component</string>
 </resources>
