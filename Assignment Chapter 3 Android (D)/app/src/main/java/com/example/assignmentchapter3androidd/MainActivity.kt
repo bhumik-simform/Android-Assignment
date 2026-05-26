@@ -36,9 +36,6 @@ class MainActivity : AppCompatActivity() {
             inflateFragment(GalleryFragment())
         }
         setupBottomNav()
-//        supportFragmentManager.addOnBackStackChangedListener {
-//            showBottomNav()
-//        }
     }
 
     private fun setupBottomNav() {
@@ -55,23 +52,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    private fun showBottomNav() {
-//        val currentFragment = supportFragmentManager.findFragmentById(R.id.main_fragment_container)
-//
-//        when(currentFragment) {
-//            is GalleryFragment -> mainBottomNav.selectedItemId = R.id.nav_gallery
-//            is AddMessageFragment -> mainBottomNav.selectedItemId = R.id.nav_add_message
-//            is ViewMessageFragment -> mainBottomNav.selectedItemId = R.id.nav_view_message
-//            else -> mainBottomNav.selectedItemId = R.id.nav_gallery
-//        }
-//    }
-
     private fun inflateFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.main_fragment_container, fragment)
-//            if (fragment !is GalleryFragment) {
-//                addToBackStack("fragment_gallery")
-//            }
         }.commit()
     }
 }
