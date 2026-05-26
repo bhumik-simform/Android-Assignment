@@ -6,19 +6,20 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    android:paddingHorizontal="16dp"
     tools:context=".SelectionMainActivity">
 
     <Button
         android:id="@+id/btn_frag_man"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
         android:text="@string/btn_txt_frag_man" />
 
     <Button
         android:id="@+id/btn_jet_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/btn_txt_jet_nav" />
 
