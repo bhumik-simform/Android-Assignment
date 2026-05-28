@@ -15,14 +15,13 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_take_photo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
+        android:layout_gravity="bottom|start"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="32dp"
-        android:importantForAccessibility="no"
-        android:src="@drawable/ic_take_picture"
-        tools:ignore="RtlHardcoded" />
+        android:contentDescription="Take photo"
+        android:src="@drawable/ic_take_picture" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_image"
