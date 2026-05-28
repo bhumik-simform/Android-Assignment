@@ -32,7 +32,7 @@
 
         <activity
             android:name=".main.FragManActivity"
-            android:exported="true" />
+            android:exported="false" />
 
         <activity
             android:name=".main.JetNavActivity"
