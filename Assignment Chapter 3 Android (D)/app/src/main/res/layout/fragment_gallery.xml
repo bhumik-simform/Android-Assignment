@@ -10,8 +10,8 @@
         android:id="@+id/iv_selected_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:importantForAccessibility="no"
-        android:src="@drawable/ic_gallery"/>
+        android:contentDescription="Selected image"
+        android:src="@drawable/ic_gallery" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_take_photo"
