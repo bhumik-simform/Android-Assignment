@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Assignment Chapter 3 Android((D)"
+rootProject.name = "Assignment Chapter 3 Android (D)"
 include(":app")
  
