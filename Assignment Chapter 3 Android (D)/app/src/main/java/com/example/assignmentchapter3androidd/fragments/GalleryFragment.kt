@@ -89,8 +89,8 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         selectedImageView = null
     }
 
