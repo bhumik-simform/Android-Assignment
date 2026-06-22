@@ -4,6 +4,7 @@ import com.example.assignmentchapter4android.network.NetworkManager
 import com.example.assignmentchapter4android.network.RetrofitGsonNetworkManager
 import com.example.assignmentchapter4android.network.RetrofitManualNetworkManager
 import com.example.assignmentchapter4android.network.UrlConnectionNetworkManager
+import com.example.assignmentchapter4android.repository.UserRepository
 
 object AppModule {
     private lateinit var networkType: NetworkType
@@ -27,7 +28,9 @@ object AppModule {
         }
     }
 
-    fun provideRepository() {
-
+    fun provideRepository(): UserRepository {
+        return UserRepository(
+            provideNetworkManager()
+        )
     }
 }

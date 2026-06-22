@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignmentchapter4android.R
-import com.example.assignmentchapter4android.model.UserModel
+import com.example.assignmentchapter4android.model.User
 import com.example.assignmentchapter4android.databinding.ItemUserBinding
 
-class UserListAdapter: ListAdapter<UserModel, UserListAdapter.UserViewHolder>(UserDiffCallback()) {
+class UserListAdapter: ListAdapter<User, UserListAdapter.UserViewHolder>(UserDiffCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -27,7 +27,7 @@ class UserListAdapter: ListAdapter<UserModel, UserListAdapter.UserViewHolder>(Us
     }
 
     class UserViewHolder(private val binding: ItemUserBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bindData(user: UserModel) {
+        fun bindData(user: User) {
             binding.tvUserName.apply {
                 this.text = this.context.getString(R.string.item_user_full_name, user.firstName, user.lastName)
             }
@@ -36,15 +36,15 @@ class UserListAdapter: ListAdapter<UserModel, UserListAdapter.UserViewHolder>(Us
         }
     }
 
-    class UserDiffCallback: DiffUtil.ItemCallback<UserModel>() {
+    class UserDiffCallback: DiffUtil.ItemCallback<User>() {
         override fun areItemsTheSame(
-            oldItem: UserModel,
-            newItem: UserModel
+            oldItem: User,
+            newItem: User
         ) = oldItem.id == newItem.id
 
         override fun areContentsTheSame(
-            oldItem: UserModel,
-            newItem: UserModel
+            oldItem: User,
+            newItem: User
         ) = oldItem == newItem
 
     }
