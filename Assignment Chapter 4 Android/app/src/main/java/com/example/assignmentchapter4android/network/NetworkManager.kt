@@ -4,12 +4,13 @@ import com.example.assignmentchapter4android.model.CreateUserRequest
 import com.example.assignmentchapter4android.model.LoginRequest
 import com.example.assignmentchapter4android.model.LoginResponse
 import com.example.assignmentchapter4android.model.User
+import com.example.assignmentchapter4android.model.UsersListResponse
 
 interface NetworkManager {
 
     suspend fun login(request: LoginRequest): NetworkResult<LoginResponse>
 
-    suspend fun getUsers(): NetworkResult<List<User>>
+    suspend fun getUsers(): NetworkResult<UsersListResponse>
 
     suspend fun createUser(request: CreateUserRequest): NetworkResult<User>
 

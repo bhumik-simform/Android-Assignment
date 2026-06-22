@@ -5,6 +5,7 @@ import com.example.assignmentchapter4android.model.CreateUserRequest
 import com.example.assignmentchapter4android.model.LoginRequest
 import com.example.assignmentchapter4android.model.LoginResponse
 import com.example.assignmentchapter4android.model.User
+import com.example.assignmentchapter4android.model.UsersListResponse
 
 class RetrofitGsonNetworkManager : NetworkManager {
 
@@ -21,7 +22,7 @@ class RetrofitGsonNetworkManager : NetworkManager {
         }
     }
 
-    override suspend fun getUsers(): NetworkResult<List<User>> {
+    override suspend fun getUsers(): NetworkResult<UsersListResponse> {
         return try {
             val response = RetrofitClient.apiService.getUsers()
             if (response.isSuccessful && response.body() != null) {

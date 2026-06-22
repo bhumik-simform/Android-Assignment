@@ -4,13 +4,14 @@ import com.example.assignmentchapter4android.model.CreateUserRequest
 import com.example.assignmentchapter4android.model.LoginRequest
 import com.example.assignmentchapter4android.model.LoginResponse
 import com.example.assignmentchapter4android.model.User
+import com.example.assignmentchapter4android.model.UsersListResponse
 
 class RetrofitManualNetworkManager: NetworkManager {
     override suspend fun login(request: LoginRequest): NetworkResult<LoginResponse> {
         TODO("Not yet implemented")
     }
 
-    override suspend fun getUsers(): NetworkResult<List<User>> {
+    override suspend fun getUsers(): NetworkResult<UsersListResponse> {
         TODO("Not yet implemented")
     }
 

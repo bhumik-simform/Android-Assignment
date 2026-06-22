@@ -4,6 +4,7 @@ import com.example.assignmentchapter4android.model.CreateUserRequest
 import com.example.assignmentchapter4android.model.LoginRequest
 import com.example.assignmentchapter4android.model.LoginResponse
 import com.example.assignmentchapter4android.model.User
+import com.example.assignmentchapter4android.model.UsersListResponse
 import com.example.assignmentchapter4android.network.NetworkManager
 import com.example.assignmentchapter4android.network.NetworkResult
 
@@ -17,7 +18,7 @@ class UserRepository(private val networkManager: NetworkManager) {
         )
     }
 
-    suspend fun getUsers(): NetworkResult<List<User>> {
+    suspend fun getUsers(): NetworkResult<UsersListResponse> {
         return networkManager.getUsers()
     }
 

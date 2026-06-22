@@ -32,7 +32,7 @@ class UserListAdapter: ListAdapter<User, UserListAdapter.UserViewHolder>(UserDif
                 this.text = this.context.getString(R.string.item_user_full_name, user.firstName, user.lastName)
             }
 
-            binding.tvUserName.text = user.email
+            binding.tvUserEmail.text = user.email
         }
     }
 
