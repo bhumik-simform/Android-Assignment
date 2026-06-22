@@ -1,7 +1,5 @@
 package com.example.assignmentchapter4android.network
 
-import com.example.assignmentchapter4android.NetWorkError
-
 sealed class NetworkResult<out T> {
 
     data class Success<T>(
@@ -9,6 +7,6 @@ sealed class NetworkResult<out T> {
     ): NetworkResult<T>()
 
     data class Error(
-        val networkError: NetWorkError
+        val networkError: String
     ): NetworkResult<Nothing>()
 }

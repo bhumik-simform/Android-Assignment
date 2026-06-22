@@ -13,6 +13,6 @@ interface NetworkManager {
 
     suspend fun createUser(request: CreateUserRequest): NetworkResult<User>
 
-    suspend fun getUser(id: Int): NetworkResult<User>
+    suspend fun getUser(userId: Int): NetworkResult<User>
 
 }
