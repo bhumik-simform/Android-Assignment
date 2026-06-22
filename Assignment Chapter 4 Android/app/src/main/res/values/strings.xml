@@ -1,10 +1,16 @@
 <resources>
 
-<!--    Network Selection Activity  -->
     <string name="app_name">Assignment Chapter 4 Android</string>
-        <string name="network_selection_title">Choose Implementation</string>
-        <string name="network_btn_url_connection">URL Connection</string>
-        <string name="network_btn_retrofit_manual">Retrofit + Manual</string>
-        <string name="network_btn_retrofit_gson">Retrofit + Gson</string>
+
+    <!--    Network Selection Activity  -->
+    <string name="network_selection_title">Choose Implementation</string>
+    <string name="network_btn_url_connection">URL Connection</string>
+    <string name="network_btn_retrofit_manual">Retrofit + Manual</string>
+    <string name="network_btn_retrofit_gson">Retrofit + Gson</string>
+    <string name="login_title">Login</string>
+    <string name="login_user_name_hint">User Name</string>
+    <string name="login_password_hint">Password</string>
+
+    <!--    Login Activity  -->
 
 </resources>
