@@ -1,4 +1,4 @@
-package com.example.assignmentchapter4android.ui.login
+package com.example.assignmentchapter4android.ui
 
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo

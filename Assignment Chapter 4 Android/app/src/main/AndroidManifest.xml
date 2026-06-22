@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AssignmentChapter4Android">
         <activity
-            android:name=".ui.networkselection.NetworkSelectionActivity"
+            android:name=".ui.NetworkSelectionActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.login.LoginActivity"
+            android:name=".ui.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

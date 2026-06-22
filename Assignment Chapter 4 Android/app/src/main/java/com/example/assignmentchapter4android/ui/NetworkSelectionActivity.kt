@@ -1,4 +1,4 @@
-package com.example.assignmentchapter4android.ui.networkselection
+package com.example.assignmentchapter4android.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.assignmentchapter4android.AppModule
 import com.example.assignmentchapter4android.R
 import com.example.assignmentchapter4android.databinding.ActivityNetworkSelectionBinding
-import com.example.assignmentchapter4android.ui.login.LoginActivity
 
 class NetworkSelectionActivity : AppCompatActivity() {
 
