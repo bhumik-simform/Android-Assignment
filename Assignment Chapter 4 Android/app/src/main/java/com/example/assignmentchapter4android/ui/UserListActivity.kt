@@ -63,6 +63,7 @@ class UserListActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         adapter = UserListAdapter()
         binding.rvUserList.adapter = adapter
+        binding.rvUserList.addItemDecoration(UserListDecor(32))
         binding.rvUserList.layoutManager = LinearLayoutManager(this)
 
     }
