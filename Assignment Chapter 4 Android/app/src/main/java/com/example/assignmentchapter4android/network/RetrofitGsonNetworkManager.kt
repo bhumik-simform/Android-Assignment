@@ -1,6 +1,5 @@
 package com.example.assignmentchapter4android.network
 
-import android.util.Log
 import com.example.assignmentchapter4android.model.CreateUserRequest
 import com.example.assignmentchapter4android.model.LoginRequest
 import com.example.assignmentchapter4android.model.LoginResponse
