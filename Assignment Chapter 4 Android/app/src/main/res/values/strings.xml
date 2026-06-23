@@ -28,4 +28,9 @@
     <string name="add_user_image_url_hint">Avatar Image Link</string>
     <string name="add_user_btn_cancel">Cancel</string>
     <string name="add_user_btn_add">Add User</string>
+
+    <!--    User Details Activity   -->
+    <string name="user_details_user_name">User Name:</string>
+    <string name="user_details_email">Email Address:</string>
+    <string name="user_details_id">User Id:</string>
 </resources>

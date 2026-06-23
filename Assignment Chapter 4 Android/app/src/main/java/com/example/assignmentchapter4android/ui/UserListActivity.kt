@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.assignmentchapter4android.R
 import com.example.assignmentchapter4android.databinding.ActivityUserListBinding
 import com.example.assignmentchapter4android.model.CreateUserRequest
+import com.example.assignmentchapter4android.model.User
 import com.example.assignmentchapter4android.viewModels.UserListUiState
 import com.example.assignmentchapter4android.viewModels.UserListViewModel
 class UserListActivity : AppCompatActivity() {
@@ -75,7 +76,14 @@ class UserListActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        adapter = UserListAdapter()
+
+        val onItemClick: (User)-> Unit = { user ->
+            val intent = Intent(this, UserDetailActivity::class.java)
+            intent.putExtra("USER_ID",user.id)
+            startActivity(intent)
+        }
+
+        adapter = UserListAdapter(onItemClick)
         binding.rvUserList.adapter = adapter
         binding.rvUserList.addItemDecoration(UserListDecor(32))
         binding.rvUserList.layoutManager = LinearLayoutManager(this)

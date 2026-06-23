@@ -6,6 +6,7 @@ data class User(
     val id: Int,
     val firstName: String,
     val lastName: String,
+    @SerializedName("username")
     val userName: String,
     val email: String,
     @SerializedName("image")

@@ -13,7 +13,10 @@ import com.squareup.picasso.Picasso
 import com.squareup.picasso.Callback
 import java.lang.Exception
 
-class UserListAdapter : ListAdapter<User, UserListAdapter.UserViewHolder>(UserDiffCallback()) {
+class UserListAdapter(
+    private val onItemClicked: (User) -> Unit
+) : ListAdapter<User, UserListAdapter.UserViewHolder>(UserDiffCallback()) {
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -30,7 +33,7 @@ class UserListAdapter : ListAdapter<User, UserListAdapter.UserViewHolder>(UserDi
         holder.bindData(user)
     }
 
-    class UserViewHolder(private val binding: ItemUserBinding) :
+    inner class UserViewHolder(private val binding: ItemUserBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bindData(user: User) {
 
@@ -56,6 +59,10 @@ class UserListAdapter : ListAdapter<User, UserListAdapter.UserViewHolder>(UserDi
             }
 
             binding.tvUserEmail.text = user.email
+
+            binding.root.setOnClickListener {
+                onItemClicked(user)
+            }
         }
     }
 
