@@ -10,6 +10,7 @@ appcompat = "1.7.1"
 material = "1.14.0"
 activityKtx = "1.13.0"
 constraintlayout = "2.2.1"
+picasso = "2.71828"
 retrofit = "3.0.0"
 
 [libraries]
@@ -21,6 +22,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 

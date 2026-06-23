@@ -12,17 +12,28 @@
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_user_avatar"
+        <FrameLayout
+            android:id="@+id/frame_lay_user_image"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/CircleImageStyle"
-            tools:src="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent">
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_user_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars" />
+
+            <ProgressBar
+                android:id="@+id/progress_circular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </FrameLayout>
 
         <TextView
 
@@ -34,8 +45,8 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/tv_user_email"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/iv_user_avatar"
-            app:layout_constraintTop_toTopOf="@id/iv_user_avatar"
+            app:layout_constraintStart_toEndOf="@id/frame_lay_user_image"
+            app:layout_constraintTop_toTopOf="@id/frame_lay_user_image"
             app:layout_constraintVertical_chainStyle="packed"
             tools:text="User Name" />
 
@@ -45,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/iv_user_avatar"
+            app:layout_constraintBottom_toBottomOf="@id/frame_lay_user_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/tv_user_name"
             app:layout_constraintTop_toBottomOf="@id/tv_user_name"
