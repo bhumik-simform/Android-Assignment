@@ -1,18 +1,16 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlinParcelize)
 }
 
 android {
     namespace = "com.example.assignmentchapter4android"
-    compileSdk {
-        version = release(37)
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.assignmentchapter4android"
-        minSdk = 24
-        //noinspection OldTargetApi
-        targetSdk = 36
+        minSdk = 33
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 

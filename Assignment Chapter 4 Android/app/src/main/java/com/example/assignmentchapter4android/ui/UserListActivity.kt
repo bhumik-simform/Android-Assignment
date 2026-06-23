@@ -1,27 +1,41 @@
 package com.example.assignmentchapter4android.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.assignmentchapter4android.R
 import com.example.assignmentchapter4android.databinding.ActivityUserListBinding
+import com.example.assignmentchapter4android.model.CreateUserRequest
 import com.example.assignmentchapter4android.viewModels.UserListUiState
 import com.example.assignmentchapter4android.viewModels.UserListViewModel
-
 class UserListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserListBinding
-
+    private lateinit var adapter: UserListAdapter
     private val viewModel: UserListViewModel by viewModels()
 
-    private lateinit var adapter: UserListAdapter
+    private val startForResult = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+
+        if(result.resultCode == RESULT_OK) {
+            val data: Intent? = result.data
+            val newUser = data?.getParcelableExtra("NEW_CREATED_USER", CreateUserRequest::class.java)
+
+            if(newUser!=null) {
+                viewModel.createUser(newUser)
+            }
+        }
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +84,8 @@ class UserListActivity : AppCompatActivity() {
 
     private fun setupOnClicks() {
         binding.fabAddUserList.setOnClickListener {
-            showAddUserDialog()
+            val intent = Intent(this, AddUserActivity::class.java)
+            startForResult.launch(intent)
         }
     }
 
@@ -86,7 +101,4 @@ class UserListActivity : AppCompatActivity() {
             else View.GONE
     }
 
-    private fun showAddUserDialog() {
-
-    }
 }

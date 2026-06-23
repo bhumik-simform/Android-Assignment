@@ -16,6 +16,16 @@
     <!--    User List Activity  -->
     <string name="user_list_add_user_content_description">Add User</string>
 
-<!--    User Item   -->
+    <!--    User Item   -->
     <string name="item_user_full_name">"%1$s %2$s"</string>
+
+
+    <!--    Add User Activity   -->
+    <string name="add_user_first_name_hint">First Name</string>
+    <string name="add_user_last_name_hint">Last Name</string>
+    <string name="add_user_email_hint">Email</string>
+    <string name="add_user_user_name_hint">User Name</string>
+    <string name="add_user_image_url_hint">Avatar Image Link</string>
+    <string name="add_user_btn_cancel">Cancel</string>
+    <string name="add_user_btn_add">Add User</string>
 </resources>
