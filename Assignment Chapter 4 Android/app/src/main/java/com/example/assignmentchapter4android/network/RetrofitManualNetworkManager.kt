@@ -1,11 +1,11 @@
 package com.example.assignmentchapter4android.network
 
-import android.util.Log
 import com.example.assignmentchapter4android.model.CreateUserRequest
 import com.example.assignmentchapter4android.model.LoginRequest
 import com.example.assignmentchapter4android.model.LoginResponse
 import com.example.assignmentchapter4android.model.User
 import com.example.assignmentchapter4android.model.UsersListResponse
+import com.example.assignmentchapter4android.toUserMessage
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
@@ -34,10 +34,10 @@ class RetrofitManualNetworkManager : NetworkManager {
                 NetworkResult.Success(loginResponse)
 
             } else {
-                NetworkResult.Error("Areeeee")
+                NetworkResult.Error("Login Failed")
             }
         } catch (e: Exception) {
-            NetworkResult.Error(e.message.toString())
+            NetworkResult.Error(e.toUserMessage())
         }
     }
 
@@ -81,11 +81,10 @@ class RetrofitManualNetworkManager : NetworkManager {
                 NetworkResult.Success(UsersListResponse(usersList))
 
             } else {
-                NetworkResult.Error("Areeeee")
+                NetworkResult.Error("Failed to load data")
             }
         } catch (e: Exception) {
-            Log.e("ApiError", e.message.toString())
-            NetworkResult.Error(e.message.toString())
+            NetworkResult.Error(e.toUserMessage())
         }
     }
 
@@ -126,11 +125,10 @@ class RetrofitManualNetworkManager : NetworkManager {
                 NetworkResult.Success(user)
 
             } else {
-                NetworkResult.Error("Areeeee")
+                NetworkResult.Error("Failed to create user")
             }
         } catch (e: Exception) {
-            Log.e("ApiError", e.message.toString())
-            NetworkResult.Error(e.message.toString())
+            NetworkResult.Error(e.toUserMessage())
         }
     }
 
@@ -161,10 +159,10 @@ class RetrofitManualNetworkManager : NetworkManager {
                 NetworkResult.Success(user)
 
             } else {
-                NetworkResult.Error("Areeeee")
+                NetworkResult.Error("Failed to load data")
             }
         } catch (e: Exception) {
-            NetworkResult.Error(e.message.toString())
+            NetworkResult.Error(e.toUserMessage())
         }
     }
 }

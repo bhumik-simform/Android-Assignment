@@ -1,11 +1,11 @@
 package com.example.assignmentchapter4android.network
 
-import android.util.Log
 import com.example.assignmentchapter4android.model.CreateUserRequest
 import com.example.assignmentchapter4android.model.LoginRequest
 import com.example.assignmentchapter4android.model.LoginResponse
 import com.example.assignmentchapter4android.model.User
 import com.example.assignmentchapter4android.model.UsersListResponse
+import com.example.assignmentchapter4android.toUserMessage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
@@ -45,7 +45,7 @@ class UrlConnectionNetworkManager : NetworkManager {
                 }
 
             } catch (e: Exception) {
-                NetworkResult.Error(e.message ?: "Meow")
+                NetworkResult.Error(e.toUserMessage())
             }
         }
     }
@@ -96,7 +96,7 @@ class UrlConnectionNetworkManager : NetworkManager {
                     NetworkResult.Error("${response.code}: ${response.body}")
                 }
             } catch (e: Exception) {
-                NetworkResult.Error(e.message.toString())
+                NetworkResult.Error(e.toUserMessage())
             }
         }
     }
@@ -147,7 +147,7 @@ class UrlConnectionNetworkManager : NetworkManager {
                     NetworkResult.Error("${response.code}: ${response.body}")
                 }
             } catch (e: Exception) {
-                NetworkResult.Error(e.message.toString())
+                NetworkResult.Error(e.toUserMessage())
             }
         }
     }
@@ -189,7 +189,7 @@ class UrlConnectionNetworkManager : NetworkManager {
                 }
 
             } catch (e: Exception) {
-                NetworkResult.Error(e.message.toString())
+                NetworkResult.Error(e.toUserMessage())
             }
         }
     }

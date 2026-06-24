@@ -5,6 +5,7 @@ import com.example.assignmentchapter4android.model.LoginRequest
 import com.example.assignmentchapter4android.model.LoginResponse
 import com.example.assignmentchapter4android.model.User
 import com.example.assignmentchapter4android.model.UsersListResponse
+import com.example.assignmentchapter4android.toUserMessage
 
 class RetrofitGsonNetworkManager : NetworkManager {
 
@@ -14,10 +15,10 @@ class RetrofitGsonNetworkManager : NetworkManager {
             if (response.isSuccessful && response.body() != null) {
                 NetworkResult.Success(response.body()!!)
             } else {
-                NetworkResult.Error("Arrreee")
+                NetworkResult.Error("Login Failed")
             }
         } catch (e: Exception) {
-            NetworkResult.Error(e.message.toString())
+            NetworkResult.Error(e.toUserMessage())
         }
     }
 
@@ -27,10 +28,10 @@ class RetrofitGsonNetworkManager : NetworkManager {
             if (response.isSuccessful && response.body() != null) {
                 NetworkResult.Success(response.body()!!)
             } else {
-                NetworkResult.Error("UnknowError")
+                NetworkResult.Error("Failed to load data")
             }
         } catch (e: Exception) {
-            NetworkResult.Error(e.message.toString())
+            NetworkResult.Error(e.toUserMessage())
         }
     }
 
@@ -40,10 +41,10 @@ class RetrofitGsonNetworkManager : NetworkManager {
             if (response.isSuccessful && response.body() != null) {
                 NetworkResult.Success(response.body()!!)
             } else {
-                NetworkResult.Error("UnknowError")
+                NetworkResult.Error("Failed to create user")
             }
         } catch (e: Exception) {
-            NetworkResult.Error(e.message.toString())
+            NetworkResult.Error(e.toUserMessage())
         }
     }
 
@@ -53,10 +54,10 @@ class RetrofitGsonNetworkManager : NetworkManager {
             if (response.isSuccessful && response.body() != null) {
                 NetworkResult.Success(response.body()!!)
             } else {
-                NetworkResult.Error("UnknowError")
+                NetworkResult.Error("Failed to load data")
             }
         } catch (e: Exception) {
-            NetworkResult.Error(e.message.toString())
+            NetworkResult.Error(e.toUserMessage())
         }
     }
 }
