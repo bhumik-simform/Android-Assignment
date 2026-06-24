@@ -12,5 +12,6 @@ data class CreateUserRequest(
     @SerializedName("username")
     val userName: String,
     val email: String,
+    @SerializedName("image")
     val imageUrl: String
 ): Parcelable
