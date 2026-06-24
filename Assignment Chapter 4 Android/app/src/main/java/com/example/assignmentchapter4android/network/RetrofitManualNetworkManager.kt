@@ -13,12 +13,10 @@ import org.json.JSONObject
 class RetrofitManualNetworkManager : NetworkManager {
     override suspend fun login(request: LoginRequest): NetworkResult<LoginResponse> {
         return try {
-            val requestBody = """
-                {
-                    "username": "${request.userName}",
-                    "password": "${request.password}"
-                }
-            """.toRequestBody("application/json".toMediaType())
+            val requestBody = JSONObject()
+                .put("username", request.userName)
+                .put("password", request.password).toString()
+                .toRequestBody("application/json".toMediaType())
 
             val response = RetrofitClient.apiManService.login(requestBody)
             if (response.isSuccessful && response.body() != null) {
@@ -44,7 +42,7 @@ class RetrofitManualNetworkManager : NetworkManager {
     }
 
     override suspend fun getUsers(): NetworkResult<UsersListResponse> {
-        return try{
+        return try {
             val response = RetrofitClient.apiManService.getUsers()
 
             if (response.isSuccessful && response.body() != null) {
@@ -54,9 +52,9 @@ class RetrofitManualNetworkManager : NetworkManager {
 
                 val usersArray = jsonObject.getJSONArray("users")
 
-                val usersList  = mutableListOf<User>()
+                val usersList = mutableListOf<User>()
 
-                for(i in 0 until usersArray.length()) {
+                for (i in 0 until usersArray.length()) {
 
                     val userObject = usersArray.getJSONObject(i)
 
@@ -93,15 +91,14 @@ class RetrofitManualNetworkManager : NetworkManager {
 
     override suspend fun createUser(request: CreateUserRequest): NetworkResult<User> {
         return try {
-            val requestBody = """
-                {
-                    "firstName": "${request.firstName}",
-                    "lastName": "${request.lastName}",
-                    "username": "${request.userName}",
-                    "email": "${request.email}",
-                    "image": "${request.imageUrl}"
-                }
-            """.toRequestBody("application/json".toMediaType())
+            val requestBody = JSONObject()
+                .put("firstName", request.firstName)
+                .put("lastName", request.lastName)
+                .put("username", request.userName)
+                .put("email", request.email)
+                .put("image", request.imageUrl)
+                .toString()
+                .toRequestBody("application/json".toMediaType())
 
             val response = RetrofitClient.apiManService.createUser(requestBody)
 
